@@ -1,0 +1,49 @@
+{
+  "version": "3.7.0",
+  "uuid": "projectile-prefab-uuid-001",
+  "name": "Projectile",
+  "type": "cc.Prefab",
+  "autoReleaseAssets": false,
+  "optimizePolicy": 1,
+  "data": {
+    "nodes": [
+      {
+        "id": "projectile-root",
+        "name": "Projectile",
+        "uuid": "projectile-prefab-node-uuid",
+        "position": { "x": 0, "y": 0, "z": 0 },
+        "scale": { "x": 0.5, "y": 0.5, "z": 1 },
+        "active": true,
+        "components": [
+          {
+            "type": "cc.Sprite",
+            "uuid": "projectile-sprite-uuid",
+            "sizeMode": 0,
+            "hex": "#FFFFCC"
+          },
+          {
+            "type": "cc.CircleCollider",
+            "uuid": "projectile-collider-uuid",
+            "radius": 15,
+            "tag": 10,
+            "density": 0,
+            "sensor": true
+          },
+          {
+            "type": "cc.RigidBody",
+            "uuid": "projectile-rigidbody-uuid",
+            "type": 2,
+            "gravityScale": 0
+          },
+          {
+            "type": "ProjectileController",
+            "uuid": "projectile-controller-uuid",
+            "speed": 400,
+            "damage": 10,
+            "lifetime": 3
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -4,6 +4,8 @@ page {
   background-color: #333366;
   color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
 /* 容器 */
@@ -27,7 +29,6 @@ page {
   margin: 30rpx 0;
 }
 
-/* 副标题 */
 .subtitle {
   font-size: 28rpx;
   color: #CCCCCC;
@@ -50,6 +51,10 @@ page {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4rpx 15rpx rgba(255, 102, 102, 0.3);
+}
+
+.btn::after {
+  border: none;
 }
 
 .btn:active {
@@ -217,4 +222,571 @@ page {
   color: #333;
   font-size: 20rpx;
   font-weight: bold;
+}
+
+/* header */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.nickname {
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.level {
+  font-size: 24rpx;
+  color: #FFD700;
+}
+
+.currency-info {
+  display: flex;
+  gap: 20rpx;
+}
+
+/* section */
+.section-title {
+  font-size: 32rpx;
+  color: #FFD700;
+  margin: 20rpx 0;
+}
+
+/* 工具栏 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  background-color: #222244;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tool-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #CCCCCC;
+  font-size: 22rpx;
+}
+
+.tool-btn::after {
+  border: none;
+}
+
+.tool-btn .icon {
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+/* 角色卡片 */
+.character-list {
+  width: 100%;
+  padding: 20rpx;
+}
+
+.character-card {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.character-card.locked {
+  opacity: 0.6;
+}
+
+.character-card.selected {
+  border: 3rpx solid #FFD700;
+}
+
+.character-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: #555577;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60rpx;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 60rpx;
+  transform: translate(-50%, -50%);
+  font-size: 40rpx;
+}
+
+.character-info {
+  margin-left: 30rpx;
+  flex: 1;
+}
+
+.name {
+  font-size: 36rpx;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.title-text {
+  font-size: 26rpx;
+  color: #CCCCCC;
+  margin-top: 10rpx;
+}
+
+.tags {
+  display: flex;
+  gap: 10rpx;
+  margin-top: 15rpx;
+}
+
+.select-indicator {
+  position: absolute;
+  right: 30rpx;
+  font-size: 40rpx;
+  color: #FFD700;
+}
+
+.confirm-btn {
+  position: fixed;
+  bottom: 40rpx;
+  left: 75rpx;
+}
+
+/* tab */
+.tab-bar {
+  width: 100%;
+  display: flex;
+  background-color: #222244;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  color: #CCCCCC;
+  font-size: 28rpx;
+}
+
+.tab.active {
+  color: #FFD700;
+  border-bottom: 4rpx solid #FFD700;
+}
+
+.goods-list {
+  height: calc(100vh - 400rpx);
+}
+
+.goods-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 20rpx;
+  border-radius: 15rpx;
+}
+
+.goods-icon {
+  width: 100rpx;
+  height: 100rpx;
+  font-size: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goods-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+
+.goods-info {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.goods-name {
+  font-size: 32rpx;
+  color: #FFD700;
+}
+
+.goods-desc {
+  font-size: 24rpx;
+  color: #AAAAAA;
+  margin-top: 10rpx;
+}
+
+.goods-price {
+  font-size: 28rpx;
+  color: #FFD700;
+  margin-top: 10rpx;
+}
+
+.buy-btn {
+  width: 140rpx;
+  height: 60rpx;
+  background: linear-gradient(135deg, #FF6666, #FF9966);
+  border-radius: 30rpx;
+  color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-btn::after {
+  border: none;
+}
+
+/* rank */
+.my-rank {
+  width: 100%;
+  padding: 20rpx;
+}
+
+.rank-card {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.rank-number {
+  font-size: 48rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.rank-info {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.rank-name {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.rank-level {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+.rank-score {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.rank-list {
+  width: 100%;
+  padding: 20rpx;
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  padding: 25rpx;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.rank-item.top {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
+}
+
+.rank-badge {
+  width: 60rpx;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.rank-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin: 0 20rpx;
+  background-color: #555577;
+}
+
+.rank-tags {
+  margin-top: 10rpx;
+}
+
+/* settings */
+.settings-list {
+  width: 100%;
+  padding: 20rpx;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.setting-item.switch {
+  justify-content: space-between;
+}
+
+.setting-label {
+  font-size: 30rpx;
+  color: #CCCCCC;
+}
+
+.setting-slider {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.setting-value {
+  font-size: 26rpx;
+  color: #FFD700;
+  width: 100rpx;
+  text-align: right;
+}
+
+.picker-value {
+  color: #FFD700;
+  font-size: 28rpx;
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15rpx;
+}
+
+.info {
+  margin-left: 20rpx;
+}
+
+.uid {
+  font-size: 24rpx;
+  color: #AAAAAA;
+  margin-top: 10rpx;
+}
+
+.about-list {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15rpx;
+}
+
+.about-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+
+.about-item:last-child {
+  border-bottom: none;
+}
+
+.arrow {
+  color: #AAAAAA;
+}
+
+.footer {
+  text-align: center;
+  padding: 50rpx;
+}
+
+.version {
+  font-size: 24rpx;
+  color: #888888;
+}
+
+.copyright {
+  font-size: 22rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+
+/* 记录列表 */
+.record-list {
+  width: 100%;
+  padding: 20rpx;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.result-tag {
+  width: 80rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.result-tag.win {
+  background-color: #66CC33;
+  color: #fff;
+}
+
+.result-tag.lose {
+  background-color: #FF6666;
+  color: #fff;
+}
+
+.record-info {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #CCCCCC;
+}
+
+/* promo */
+.promo-section {
+  padding: 30rpx;
+}
+
+.promo-card {
+  background: linear-gradient(135deg, #FF6666, #FF9966);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo-name {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.promo-desc {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 10rpx;
+}
+
+.promo-price {
+  font-size: 36rpx;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+/* 角色详情 */
+.character-detail {
+  width: 100%;
+  padding: 20rpx;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  margin: 20rpx 0;
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.detail-name {
+  font-size: 40rpx;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.detail-title {
+  font-size: 28rpx;
+  color: #CCCCCC;
+  margin-top: 10rpx;
+}
+
+.detail-ability {
+  margin-bottom: 30rpx;
+}
+
+.ability-title {
+  font-size: 28rpx;
+  color: #FFD700;
+}
+
+.ability-name {
+  font-size: 32rpx;
+  color: #fff;
+  margin-top: 10rpx;
+}
+
+.ability-desc {
+  font-size: 24rpx;
+  color: #AAAAAA;
+  margin-top: 10rpx;
+}
+
+.detail-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+}
+
+.stat-label {
+  width: 100rpx;
+  font-size: 26rpx;
+  color: #CCCCCC;
+}
+
+.stat-bar {
+  flex: 1;
+  height: 16rpx;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #66CC33, #99FF66);
+  border-radius: 8rpx;
 }

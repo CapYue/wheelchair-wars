@@ -1,0 +1,194 @@
+{
+  "version": "3.7.0",
+  "uuid": "home-scene-uuid-001",
+  "sceneName": "Home",
+  "autoReleaseAssets": false,
+  "resolution": {
+    "width": 750,
+    "height": 1334
+  },
+  "nodes": [
+    {
+      "id": "home-root",
+      "name": "Home",
+      "uuid": "home-root-uuid",
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "scale": { "x": 1, "y": 1, "z": 1 },
+      "rotation": { "x": 0, "y": 0, "z": 0, "w": 1 },
+      "active": true,
+      "components": [
+        {
+          "type": "cc.Canvas",
+          "designResolution": { "width": 750, "height": 1334 }
+        }
+      ],
+      "children": [
+        {
+          "id": "bg",
+          "name": "Background",
+          "position": { "x": 0, "y": 0, "z": 0 },
+          "components": [
+            {
+              "type": "cc.Sprite",
+              "color": { "r": 51, "g": 51, "b": 102, "a": 255 }
+            }
+          ]
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "position": { "x": 0, "y": 500, "z": 0 },
+          "components": [
+            {
+              "type": "cc.Label",
+              "string": "🥚 轮椅大作战 🥚",
+              "fontSize": 56,
+              "color": { "r": 255, "g": 215, "b": 0, "a": 255 }
+            }
+          ]
+        },
+        {
+          "id": "subtitle",
+          "name": "Subtitle",
+          "position": { "x": 0, "y": 420, "z": 0 },
+          "components": [
+            {
+              "type": "cc.Label",
+              "string": "年轻人的轮椅Battle",
+              "fontSize": 28,
+              "color": { "r": 204, "g": 204, "b": 204, "a": 255 }
+            }
+          ]
+        },
+        {
+          "id": "btn-solo",
+          "name": "SoloButton",
+          "position": { "x": 0, "y": 200, "z": 0 },
+          "components": [
+            {
+              "type": "cc.Sprite",
+              "color": { "r": 255, "g": 102, "b": 102, "a": 255 }
+            },
+            {
+              "type": "cc.Button",
+              "clickEvents": [
+                {
+                  "target": "Game",
+                  "component": "Game",
+                  "handler": "onSoloMode"
+                }
+              ]
+            }
+          ],
+          "children": [
+            {
+              "name": "Label",
+              "components": [
+                {
+                  "type": "cc.Label",
+                  "string": "🎮 单人闯关",
+                  "fontSize": 36
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "btn-pvp",
+          "name": "PVPButton",
+          "position": { "x": 0, "y": 50, "z": 0 },
+          "components": [
+            {
+              "type": "cc.Sprite",
+              "color": { "r": 102, "g": 153, "b": 255, "a": 255 }
+            },
+            {
+              "type": "cc.Button"
+            }
+          ],
+          "children": [
+            {
+              "name": "Label",
+              "components": [
+                {
+                  "type": "cc.Label",
+                  "string": "⚔️ 多人匹配",
+                  "fontSize": 36
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "btn-friend",
+          "name": "FriendButton",
+          "position": { "x": 0, "y": -100, "z": 0 },
+          "components": [
+            {
+              "type": "cc.Sprite",
+              "color": { "r": 255, "g": 215, "b": 0, "a": 255 }
+            },
+            {
+              "type": "cc.Button"
+            }
+          ],
+          "children": [
+            {
+              "name": "Label",
+              "components": [
+                {
+                  "type": "cc.Label",
+                  "string": "👥 好友对战",
+                  "fontSize": 36
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bottom-bar",
+          "name": "BottomBar",
+          "position": { "x": 0, "y": -500, "z": 0 },
+          "children": [
+            {
+              "name": "CharacterBtn",
+              "components": [
+                {
+                  "type": "cc.Button"
+                }
+              ],
+              "children": [
+                {
+                  "name": "Label",
+                  "components": [{ "type": "cc.Label", "string": "👤\n角色" }]
+                }
+              ]
+            },
+            {
+              "name": "RankBtn",
+              "position": { "x": 200, "y": 0 },
+              "components": [{ "type": "cc.Button" }],
+              "children": [
+                {
+                  "name": "Label",
+                  "components": [{ "type": "cc.Label", "string": "🏆\n排行" }]
+                }
+              ]
+            },
+            {
+              "name": "ShopBtn",
+              "position": { "x": 400, "y": 0 },
+              "components": [{ "type": "cc.Button" }],
+              "children": [
+                {
+                  "name": "Label",
+                  "components": [{ "type": "cc.Label", "string": "🛒\n商城" }]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

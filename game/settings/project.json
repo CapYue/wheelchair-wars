@@ -1,0 +1,54 @@
+{
+  "name": "wheelchair-wars",
+  "uuid": "wheelchair-wars-uuid-2024",
+  "version": "1.0.0",
+  "engine_version": "3.7.0",
+  
+  "data": {
+    "custom_layers": {
+      "Default": true,
+      "Player": true,
+      "Enemy": true,
+      "Projectile": true,
+      "UI": true
+    },
+    
+    "collision_matrix": {
+      "Player": ["Enemy", "Projectile"],
+      "Enemy": ["Player", "Projectile"],
+      "Projectile": ["Player", "Enemy"]
+    }
+  },
+  
+  "scenes": {
+    "Boot": {
+      "id": "boot-scene",
+      "url": "db://assets/scenes/Boot.scene"
+    },
+    "Home": {
+      "id": "home-scene", 
+      "url": "db://assets/scenes/Home.scene"
+    },
+    "Battle": {
+      "id": "battle-scene",
+      "url": "db://assets/scenes/Battle.scene"
+    },
+    "Result": {
+      "id": "result-scene",
+      "url": "db://assets/scenes/Result.scene"
+    }
+  },
+  
+  "builds": {
+    "wechatgame": {
+      "appid": "your-appid",
+      "start_scene": "db://assets/scenes/Boot.scene",
+      "title": "轮椅大作战",
+      "orientation": "portrait",
+      "separate_engine": false,
+      "inline_sprites": true,
+      "compress_textures": true,
+      "optimize_sprite": true
+    }
+  }
+}

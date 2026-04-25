@@ -1,0 +1,132 @@
+{
+  "version": "3.7.0",
+  "uuid": "player-prefab-uuid-001",
+  "name": "Player",
+  "type": "cc.Prefab",
+  "autoReleaseAssets": false,
+  "optimizePolicy": 1,
+  "data": {
+    "nodes": [
+      {
+        "id": "player-root",
+        "name": "Player",
+        "uuid": "player-prefab-node-uuid",
+        "position": { "x": 0, "y": 0, "z": 0 },
+        "scale": { "x": 1, "y": 1, "z": 1 },
+        "rotation": { "x": 0, "y": 0, "z": 0, "w": 1 },
+        "active": true,
+        "components": [
+          {
+            "type": "cc.Sprite",
+            "uuid": "player-sprite-uuid",
+            "sizeMode": 0,
+            "fillType": 0,
+            "fillCenter": { "x": 0.5, "y": 0.5 },
+            "fillRange": 1,
+            "stroke": 0,
+            "trim": true,
+            "hex": "#6699FF"
+          },
+          {
+            "type": "cc.CircleCollider",
+            "uuid": "player-collider-uuid",
+            "radius": 40,
+            "tag": 1,
+            "density": 1,
+            "sensor": false,
+            "friction": 0.1,
+            "restitution": 0.1
+          },
+          {
+            "type": "cc.RigidBody",
+            "uuid": "player-rigidbody-uuid",
+            "type": 2,
+            "allowSleep": true,
+            "gravityScale": 0,
+            "linearDamping": 0.1,
+            "angularDamping": 0.1
+          },
+          {
+            "type": "PlayerController",
+            "uuid": "player-controller-uuid",
+            "moveSpeed": 300,
+            "health": 100,
+            "damage": 10,
+            "attackCooldown": 0.5
+          }
+        ],
+        "children": [
+          {
+            "id": "health-bar-bg",
+            "name": "HealthBarBackground",
+            "position": { "x": 0, "y": 60, "z": 0 },
+            "components": [
+              {
+                "type": "cc.Sprite",
+                "uuid": "health-bar-bg-sprite-uuid",
+                "sizeMode": 0,
+                "hex": "#333333"
+              }
+            ],
+            "children": [
+              {
+                "id": "health-bar-fill",
+                "name": "HealthBarFill",
+                "position": { "x": 0, "y": 0, "z": 0 },
+                "scale": { "x": 1, "y": 1, "z": 1 },
+                "components": [
+                  {
+                    "type": "cc.Sprite",
+                    "uuid": "health-bar-fill-sprite-uuid",
+                    "sizeMode": 0,
+                    "fillType": 0,
+                    "fillRange": 1,
+                    "hex": "#66FF66"
+                  },
+                  {
+                    "type": "cc.ProgressBar",
+                    "uuid": "health-bar-progress-uuid",
+                    "mode": 0,
+                    "totalLength": 76,
+                    "progress": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "name-label",
+            "name": "NameLabel",
+            "position": { "x": 0, "y": 100, "z": 0 },
+            "components": [
+              {
+                "type": "cc.Label",
+                "uuid": "player-name-label-uuid",
+                "string": "玩家",
+                "fontSize": 24,
+                "lineHeight": 20,
+                "horizontalAlign": 1,
+                "verticalAlign": 1,
+                "overflow": 0,
+                "color": { "r": 255, "g": 255, "b": 255, "a": 255 }
+              }
+            ]
+          },
+          {
+            "id": "shadow",
+            "name": "Shadow",
+            "position": { "x": 0, "y": -45, "z": 0 },
+            "scale": { "x": 1.5, "y": 0.3, "z": 1 },
+            "components": [
+              {
+                "type": "cc.Sprite",
+                "uuid": "shadow-sprite-uuid",
+                "hex": "#000000"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

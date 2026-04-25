@@ -1,0 +1,7 @@
+{
+  "engine": "cocos-creator",
+  "packages": ["cocos-creator"],
+  "version": "3.7.0",
+  "name": "wheelchair-wars",
+  "id": "wheelchair-wars-game"
+}

@@ -1,0 +1,119 @@
+{
+  "version": "3.7.0",
+  "uuid": "boot-scene-uuid-001",
+  "sceneName": "Boot",
+  "autoReleaseAssets": false,
+  "explash": {
+    "center": {
+      "x": 0,
+      "y": 0
+    },
+    "fit": "cover"
+  },
+  "resolution": {
+    "width": 750,
+    "height": 1334,
+    "designWidth": 750,
+    "designHeight": 1334,
+    "scaleMode": "FIXED_WIDTH"
+  },
+  "renderPipeline": "forward",
+  "nodes": [
+    {
+      "id": "node-boot-root",
+      "name": "Boot",
+      "uuid": "boot-root-uuid",
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "scale": { "x": 1, "y": 1, "z": 1 },
+      "rotation": { "x": 0, "y": 0, "z": 0, "w": 1 },
+      "active": true,
+      "components": [
+        {
+          "type": "cc.Canvas",
+          "uuid": "canvas-component-uuid",
+          "designResolution": { "width": 750, "height": 1334 },
+          "fitWidth": true,
+          "fitHeight": false
+        },
+        {
+          "type": "BootScene",
+          "uuid": "boot-script-uuid",
+          "progressCallback": null,
+          "completeCallback": null
+        }
+      ],
+      "children": [
+        {
+          "id": "loading-bg",
+          "name": "LoadingBackground",
+          "uuid": "loading-bg-uuid",
+          "position": { "x": 0, "y": 0, "z": 0 },
+          "scale": { "x": 1, "y": 1, "z": 1 },
+          "rotation": { "x": 0, "y": 0, "z": 0, "w": 1 },
+          "active": true,
+          "components": [
+            {
+              "type": "cc.Sprite",
+              "uuid": "loading-bg-sprite-uuid",
+              "spriteFrame": null,
+              "type": 0,
+              "sizeMode": 0,
+              "fillType": 0,
+              "fillCenter": { "x": 0.5, "y": 0.5 },
+              "fillRange": 0,
+              "stroke": 0,
+              "trim": true,
+              "hex": "#333366"
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "loading-label",
+          "name": "LoadingLabel",
+          "uuid": "loading-label-uuid",
+          "position": { "x": 0, "y": -100, "z": 0 },
+          "scale": { "x": 1, "y": 1, "z": 1 },
+          "rotation": { "x": 0, "y": 0, "z": 0, "w": 1 },
+          "active": true,
+          "components": [
+            {
+              "type": "cc.Label",
+              "uuid": "loading-label-component-uuid",
+              "string": "🥚 轮椅大作战 🥚",
+              "fontSize": 48,
+              "lineHeight": 40,
+              "horizontalAlign": 1,
+              "verticalAlign": 1,
+              "overflow": 0,
+              "font": null,
+              "color": { "r": 255, "g": 215, "b": 0, "a": 255 }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "progress-bar",
+          "name": "ProgressBar",
+          "uuid": "progress-bar-uuid",
+          "position": { "x": 0, "y": -200, "z": 0 },
+          "scale": { "x": 1, "y": 1, "z": 1 },
+          "rotation": { "x": 0, "y": 0, "z": 0, "w": 1 },
+          "active": true,
+          "components": [
+            {
+              "type": "cc.ProgressBar",
+              "uuid": "progress-bar-component-uuid",
+              "mode": 0,
+              "totalLength": 300,
+              "progress": 0,
+              "barSprite": null,
+              "barNode": null
+            }
+          ],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

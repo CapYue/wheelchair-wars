@@ -1,0 +1,234 @@
+{
+  "version": "3.7.0",
+  "uuid": "result-scene-uuid-001",
+  "sceneName": "Result",
+  "autoReleaseAssets": false,
+  "resolution": {
+    "width": 750,
+    "height": 1334
+  },
+  "nodes": [
+    {
+      "id": "result-root",
+      "name": "Result",
+      "uuid": "result-root-uuid",
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "active": true,
+      "components": [
+        {
+          "type": "cc.Canvas",
+          "designResolution": { "width": 750, "height": 1334 }
+        }
+      ],
+      "children": [
+        {
+          "id": "overlay-bg",
+          "name": "OverlayBackground",
+          "position": { "x": 0, "y": 0, "z": 0 },
+          "scale": { "x": 10, "y": 10, "z": 1 },
+          "components": [
+            {
+              "type": "cc.Sprite",
+              "color": { "r": 0, "g": 0, "b": 0, "a": 200 }
+            }
+          ]
+        },
+        {
+          "id": "result-panel",
+          "name": "ResultPanel",
+          "position": { "x": 0, "y": 0, "z": 0 },
+          "components": [
+            {
+              "type": "cc.Sprite",
+              "color": { "r": 68, "g": 68, "b": 102, "a": 255 }
+            }
+          ],
+          "children": [
+            {
+              "id": "result-title",
+              "name": "ResultTitle",
+              "position": { "x": 0, "y": 400, "z": 0 },
+              "components": [
+                {
+                  "type": "cc.Label",
+                  "string": "🎉 胜利！",
+                  "fontSize": 64,
+                  "color": { "r": 255, "g": 215, "b": 0, "a": 255 }
+                }
+              ]
+            },
+            {
+              "id": "stats-container",
+              "name": "StatsContainer",
+              "position": { "x": 0, "y": 200, "z": 0 },
+              "children": [
+                {
+                  "id": "stat-damage",
+                  "name": "StatDamage",
+                  "position": { "x": 0, "y": 100, "z": 0 },
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "伤害: 0",
+                      "fontSize": 32,
+                      "color": { "r": 204, "g": 204, "b": 204, "a": 255 }
+                    }
+                  ]
+                },
+                {
+                  "id": "stat-kill",
+                  "name": "StatKill",
+                  "position": { "x": 0, "y": 30, "z": 0 },
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "击杀: 0",
+                      "fontSize": 32,
+                      "color": { "r": 204, "g": 204, "b": 204, "a": 255 }
+                    }
+                  ]
+                },
+                {
+                  "id": "stat-death",
+                  "name": "StatDeath",
+                  "position": { "x": 0, "y": -40, "z": 0 },
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "死亡: 0",
+                      "fontSize": 32,
+                      "color": { "r": 204, "g": 204, "b": 204, "a": 255 }
+                    }
+                  ]
+                },
+                {
+                  "id": "stat-duration",
+                  "name": "StatDuration",
+                  "position": { "x": 0, "y": -110, "z": 0 },
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "时长: 0:00",
+                      "fontSize": 32,
+                      "color": { "r": 204, "g": 204, "b": 204, "a": 255 }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "rewards-container",
+              "name": "RewardsContainer",
+              "position": { "x": 0, "y": -50, "z": 0 },
+              "children": [
+                {
+                  "id": "reward-gold",
+                  "name": "RewardGold",
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "💰 +0",
+                      "fontSize": 40,
+                      "color": { "r": 255, "g": 215, "b": 0, "a": 255 }
+                    }
+                  ]
+                },
+                {
+                  "id": "reward-exp",
+                  "name": "RewardExp",
+                  "position": { "x": 150, "y": 0, "z": 0 },
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "✨ +0",
+                      "fontSize": 40,
+                      "color": { "r": 255, "g": 215, "b": 0, "a": 255 }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "btn-share",
+              "name": "ShareButton",
+              "position": { "x": 0, "y": -180, "z": 0 },
+              "components": [
+                {
+                  "type": "cc.Sprite",
+                  "color": { "r": 102, "g": 153, "b": 255, "a": 255 }
+                },
+                {
+                  "type": "cc.Button"
+                }
+              ],
+              "children": [
+                {
+                  "name": "Label",
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "分享",
+                      "fontSize": 32
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "btn-home",
+              "name": "HomeButton",
+              "position": { "x": 0, "y": -280, "z": 0 },
+              "components": [
+                {
+                  "type": "cc.Sprite",
+                  "color": { "r": 102, "g": 153, "b": 255, "a": 255 }
+                },
+                {
+                  "type": "cc.Button"
+                }
+              ],
+              "children": [
+                {
+                  "name": "Label",
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "返回主页",
+                      "fontSize": 32
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "btn-again",
+              "name": "AgainButton",
+              "position": { "x": 0, "y": -380, "z": 0 },
+              "components": [
+                {
+                  "type": "cc.Sprite",
+                  "color": { "r": 255, "g": 215, "b": 0, "a": 255 }
+                },
+                {
+                  "type": "cc.Button"
+                }
+              ],
+              "children": [
+                {
+                  "name": "Label",
+                  "components": [
+                    {
+                      "type": "cc.Label",
+                      "string": "再来一局",
+                      "fontSize": 32
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

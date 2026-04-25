@@ -1,0 +1,27 @@
+{
+  "version": "3.7.0",
+  "uuid": "obstacle-prefab-uuid-001",
+  "name": "Obstacle",
+  "type": "cc.Prefab",
+  "data": {
+    "nodes": [
+      {
+        "id": "obstacle-root",
+        "name": "Obstacle",
+        "uuid": "obstacle-prefab-node-uuid",
+        "active": true,
+        "components": [
+          {
+            "type": "cc.Sprite",
+            "hex": "#8B4513"
+          },
+          {
+            "type": "cc.BoxCollider",
+            "size": { "width": 80, "height": 80 },
+            "tag": 20
+          }
+        ]
+      }
+    ]
+  }
+}
