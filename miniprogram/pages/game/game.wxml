@@ -1,0 +1,112 @@
+<!-- 轮椅大作战 - 游戏页面 -->
+
+<view class="game-container">
+  <!-- 游戏画布 -->
+  <game-canvas id="gameCanvas" />
+
+  <!-- HUD 叠加层 -->
+  <view class="hud-overlay" wx:if="{{isPlaying}}">
+    <!-- 顶部状态栏 -->
+    <view class="top-bar">
+      <!-- 敌方信息 -->
+      <view class="enemy-info">
+        <view class="player-name">{{enemyName}}</view>
+        <view class="health-bar">
+          <view class="health-fill" style="width: {{enemyHealth}}%"></view>
+        </view>
+      </view>
+      
+      <!-- 倒计时 -->
+      <view class="timer">
+        <text class="timer-text">{{timeLeft}}</text>
+      </view>
+      
+      <!-- 暂停按钮 -->
+      <view class="pause-btn" bindtap="onPause">
+        ⏸️
+      </view>
+    </view>
+
+    <!-- 底部控制区 -->
+    <view class="control-area">
+      <!-- 虚拟摇杆 -->
+      <view class="joystick-area" 
+            bindtouchstart="onJoystickStart"
+            bindtouchmove="onJoystickMove"
+            bindtouchend="onJoystickEnd">
+        <view class="joystick-base">
+          <view class="joystick-stick" style="transform: translate({{joystickOffsetX}}px, {{joystickOffsetY}}px)"></view>
+        </view>
+      </view>
+
+      <!-- 技能和攻击按钮 -->
+      <view class="action-buttons">
+        <!-- 攻击按钮 -->
+        <view class="attack-btn" bindtap="onAttack">
+          <text>投掷</text>
+        </view>
+        
+        <!-- 技能按钮 -->
+        <view class="skill-btn {{skillReady ? 'ready' : ''}}" bindtap="onSkill">
+          <text class="skill-icon">⚡</text>
+          <view class="skill-progress">
+            <view class="skill-fill" style="height: {{skillCharge}}%"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-overlay" wx:if="{{isLoading}}">
+    <text class="loading-text">{{loadingText}}</text>
+    <view class="loading-spinner">⏳</view>
+  </view>
+
+  <!-- 暂停菜单 -->
+  <view class="pause-menu" wx:if="{{isPaused}}">
+    <view class="pause-title">游戏暂停</view>
+    <button class="btn" bindtap="onResume">继续游戏</button>
+    <button class="btn" bindtap="onRestart">重新开始</button>
+    <button class="btn btn-secondary" bindtap="onExit">退出游戏</button>
+  </view>
+
+  <!-- 结算界面 -->
+  <view class="result-overlay" wx:if="{{showResult}}">
+    <view class="result-panel">
+      <view class="result-title {{isWinner ? 'win' : 'lose'}}">
+        {{isWinner ? '🎉 胜利！' : '😢 失败'}}
+      </view>
+      
+      <view class="result-stats">
+        <view class="stat-row">
+          <text>造成伤害</text>
+          <text>{{damage}}</text>
+        </view>
+        <view class="stat-row">
+          <text>击杀</text>
+          <text>{{kill}}</text>
+        </view>
+        <view class="stat-row">
+          <text>死亡</text>
+          <text>{{death}}</text>
+        </view>
+        <view class="stat-row">
+          <text>对局时长</text>
+          <text>{{duration}}</text>
+        </view>
+      </view>
+
+      <view class="rewards">
+        <text class="reward-item">💰 +{{rewardGold}}</text>
+        <text class="reward-item">✨ +{{rewardExp}}</text>
+      </view>
+
+      <view class="result-buttons">
+        <button class="btn" bindtap="onShare">分享战绩</button>
+        <button class="btn btn-secondary" bindtap="onReturnHome">返回主页</button>
+        <button class="btn btn-gold" bindtap="onPlayAgain">再来一局</button>
+      </view>
+    </view>
+  </view>
+</view>

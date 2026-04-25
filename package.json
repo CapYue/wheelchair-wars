@@ -1,0 +1,33 @@
+{
+  "name": "wheelchair-wars",
+  "version": "1.0.0",
+  "description": "轮椅大作战 - 年轻人的轮椅Battle",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node tools/build.js --dev",
+    "build": "node tools/build.js",
+    "build:minify": "node tools/build.js --minify",
+    "deploy:function": "node tools/deploy.js --function",
+    "deploy:all": "node tools/deploy.js --all",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "game",
+    "wechat-miniprogram",
+    "cocos-creator"
+  ],
+  "author": "Wheelchair Wars Team",
+  "license": "MIT",
+  "dependencies": {
+    "cocos-creator": "^3.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.0",
+    "eslint": "^8.35.0",
+    "@types/node": "^18.15.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

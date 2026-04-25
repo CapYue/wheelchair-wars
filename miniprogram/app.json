@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/game/game",
+    "pages/character/character",
+    "pages/shop/shop",
+    "pages/rank/rank",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#333366",
+    "navigationBarTitleText": "轮椅大作战",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#333366"
+  },
+  "tabBar": {
+    "color": "#CCCCCC",
+    "selectedColor": "#FFD700",
+    "backgroundColor": "#222244",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/tab_home.png",
+        "selectedIconPath": "images/tab_home_active.png"
+      },
+      {
+        "pagePath": "pages/character/character",
+        "text": "角色",
+        "iconPath": "images/tab_char.png",
+        "selectedIconPath": "images/tab_char_active.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "排行",
+        "iconPath": "images/tab_rank.png",
+        "selectedIconPath": "images/tab_rank_active.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "商城",
+        "iconPath": "images/tab_shop.png",
+        "selectedIconPath": "images/tab_shop_active.png"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置",
+        "iconPath": "images/tab_settings.png",
+        "selectedIconPath": "images/tab_settings_active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

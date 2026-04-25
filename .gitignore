@@ -1,0 +1,54 @@
+# 依赖
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 构建输出
+build/
+dist/
+out/
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 微信
+/game/unpack/
+/game/*/res/
+/game/*/src/
+/game/*/local/
+/game/*/settings/
+
+# 临时文件
+*.tmp
+*.temp
+.DS_Store
+
+# 资源备份（不要提交到仓库）
+*.bak
+*.backup
+
+# 云函数
+cloudfunctions/**/node_modules/
+
+# 日志
+logs/
+*.log
+
+# 本地配置（不要提交包含密钥的配置）
+.env.local
+.env.*.local
+config.local.js
+
+# 测试
+coverage/
+
+# 微信开发者工具缓存
+/AppData/Local/
+/Library/WechatDeveloper/

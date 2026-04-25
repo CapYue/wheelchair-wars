@@ -1,0 +1,51 @@
+<!-- 轮椅大作战 - 排行榜页面 -->
+
+<view class="container">
+  <view class="header">
+    <text class="title">🏆 排行榜</text>
+  </view>
+
+  <!-- 我的排名 -->
+  <view class="my-rank">
+    <view class="rank-card">
+      <view class="rank-number">{{myRank}}</view>
+      <view class="rank-info">
+        <text class="rank-name">{{myName}}</text>
+        <text class="rank-level">段位: {{rankName}}</text>
+      </view>
+      <view class="rank-score">{{myScore}}分</view>
+    </view>
+  </view>
+
+  <!-- 排行榜列表 -->
+  <view class="rank-list">
+    <block wx:for="{{rankList}}" wx:key="index">
+      <view class="rank-item {{item.rank <= 3 ? 'top' : ''}}">
+        <view class="rank-badge">
+          <text wx:if="{{item.rank === 1}}">🥇</text>
+          <text wx:elif="{{item.rank === 2}}">🥈</text>
+          <text wx:elif="{{item.rank === 3}}">🥉</text>
+          <text wx:else>{{item.rank}}</text>
+        </view>
+        <image class="rank-avatar" src="{{item.avatar}}" />
+        <view class="rank-info">
+          <text class="rank-name">{{item.name}}</text>
+          <view class="rank-tags">
+            <text class="tag">{{item.rankLevel}}</text>
+          </view>
+        </view>
+        <view class="rank-score">{{item.score}}分</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 好友排行Tab -->
+  <view class="tab-bar">
+    <view class="tab {{currentTab === 'all' ? 'active' : ''}}" bindtap="onSwitchTab" data-tab="all">
+      全服排行
+    </view>
+    <view class="tab {{currentTab === 'friend' ? 'active' : ''}}" bindtap="onSwitchTab" data-tab="friend">
+      好友排行
+    </view>
+  </view>
+</view>

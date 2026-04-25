@@ -1,0 +1,98 @@
+<!-- 轮椅大作战 - 商城页面 -->
+
+<view class="container">
+  <view class="header">
+    <text class="title">商城</text>
+    <view class="currency">
+      <text class="gold">💰 {{gold}}</text>
+      <text class="diamond">💎 {{diamond}}</text>
+    </view>
+  </view>
+
+  <!-- Tab切换 -->
+  <view class="tab-bar">
+    <view class="tab {{currentTab === 'character' ? 'active' : ''}}" bindtap="onSwitchTab" data-tab="character">
+      角色
+    </view>
+    <view class="tab {{currentTab === 'weapon' ? 'active' : ''}}" bindtap="onSwitchTab" data-tab="weapon">
+      武器
+    </view>
+    <view class="tab {{currentTab === 'skin' ? 'active' : ''}}" bindtap="onSwitchTab" data-tab="skin">
+      皮肤
+    </view>
+    <view class="tab {{currentTab === 'props' ? 'active' : ''}}" bindtap="onSwitchTab" data-tab="props">
+      道具
+    </view>
+  </view>
+
+  <!-- 商品列表 -->
+  <scroll-view class="goods-list" scroll-y>
+    <block wx:if="{{currentTab === 'character'}}">
+      <view class="goods-item" wx:for="{{characterItems}}" wx:key="id">
+        <image class="goods-img" src="{{item.image}}" mode="aspectFit" />
+        <view class="goods-info">
+          <text class="goods-name">{{item.name}}</text>
+          <text class="goods-desc">{{item.desc}}</text>
+          <text class="goods-price">💰 {{item.price}}</text>
+        </view>
+        <button class="buy-btn" bindtap="onBuy" data-id="{{item.id}}" data-type="character">
+          购买
+        </button>
+      </view>
+    </block>
+
+    <block wx:if="{{currentTab === 'weapon'}}">
+      <view class="goods-item" wx:for="{{weaponItems}}" wx:key="id">
+        <view class="goods-icon">{{item.icon}}</view>
+        <view class="goods-info">
+          <text class="goods-name">{{item.name}}</text>
+          <text class="goods-desc">{{item.desc}}</text>
+          <text class="goods-price">💰 {{item.price}}</text>
+        </view>
+        <button class="buy-btn" bindtap="onBuy" data-id="{{item.id}}" data-type="weapon">
+          购买
+        </button>
+      </view>
+    </block>
+
+    <block wx:if="{{currentTab === 'skin'}}">
+      <view class="goods-item" wx:for="{{skinItems}}" wx:key="id">
+        <image class="goods-img" src="{{item.image}}" mode="aspectFit" />
+        <view class="goods-info">
+          <text class="goods-name">{{item.name}}</text>
+          <text class="goods-desc">{{item.desc}}</text>
+          <text class="goods-price">💰 {{item.price}}</text>
+        </view>
+        <button class="buy-btn" bindtap="onBuy" data-id="{{item.id}}" data-type="skin">
+          购买
+        </button>
+      </view>
+    </block>
+
+    <block wx:if="{{currentTab === 'props'}}">
+      <view class="goods-item" wx:for="{{propsItems}}" wx:key="id">
+        <view class="goods-icon">{{item.icon}}</view>
+        <view class="goods-info">
+          <text class="goods-name">{{item.name}}</text>
+          <text class="goods-desc">{{item.desc}}</text>
+          <text class="goods-price">💰 {{item.price}}</text>
+        </view>
+        <button class="buy-btn" bindtap="onBuy" data-id="{{item.id}}" data-type="props">
+          购买
+        </button>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 礼包推荐 -->
+  <view class="promo-section">
+    <text class="section-title">🔥 限时礼包</text>
+    <view class="promo-card" bindtap="onBuyPackage">
+      <view class="promo-info">
+        <text class="promo-name">新手大礼包</text>
+        <text class="promo-desc">包含所有角色+1000金币+限定皮肤</text>
+      </view>
+      <view class="promo-price">💎 30</view>
+    </view>
+  </view>
+</view>

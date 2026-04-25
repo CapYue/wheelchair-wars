@@ -1,0 +1,67 @@
+<!-- 轮椅大作战 - 角色选择页面 -->
+
+<view class="container">
+  <view class="header">
+    <text class="title">选择角色</text>
+  </view>
+
+  <view class="character-list">
+    <block wx:for="{{characters}}" wx:key="id">
+      <view class="character-card {{item.selected ? 'selected' : ''}} {{item.locked ? 'locked' : ''}}"
+            bindtap="onSelectCharacter"
+            data-id="{{item.id}}">
+        <view class="character-avatar">
+          <image src="{{item.avatar}}" mode="aspectFit" />
+          <view class="lock-overlay" wx:if="{{item.locked}}">🔒</view>
+        </view>
+        <view class="character-info">
+          <text class="name">{{item.name}}</text>
+          <text class="title">{{item.title}}</text>
+          <view class="tags">
+            <text class="tag" wx:for="{{item.tags}}" wx:for-item="tag">{{tag}}</text>
+          </view>
+        </view>
+        <view class="select-indicator" wx:if="{{item.selected}}">✓</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 角色详情 -->
+  <view class="character-detail" wx:if="{{selectedCharacter}}">
+    <view class="detail-header">
+      <text class="detail-name">{{selectedCharacter.name}}</text>
+      <text class="detail-title">{{selectedCharacter.title}}</text>
+    </view>
+
+    <view class="detail-ability">
+      <text class="ability-title">技能</text>
+      <text class="ability-name">{{selectedCharacter.skillName}}</text>
+      <text class="ability-desc">{{selectedCharacter.skillDesc}}</text>
+    </view>
+
+    <view class="detail-stats">
+      <view class="stat-item">
+        <text class="stat-label">移速</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{selectedCharacter.speed * 100}}%"></view>
+        </view>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">伤害</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{selectedCharacter.damage * 100}}%"></view>
+        </view>
+      </view>
+      <view class="stat-item">
+        <text class="stat-label">血量</text>
+        <view class="stat-bar">
+          <view class="stat-fill" style="width: {{selectedCharacter.health * 100}}%"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="confirm-btn">
+    <button class="btn btn-gold" bindtap="onConfirm">确认选择</button>
+  </view>
+</view>

@@ -1,0 +1,73 @@
+<!-- 轮椅大作战 - 首页 -->
+
+<view class="container">
+  <!-- 顶部区域 -->
+  <view class="header">
+    <view class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl || '/images/default_avatar.png'}}" />
+      <view class="user-detail">
+        <text class="nickname">{{userInfo.nickName || '轮椅战士'}}</text>
+        <text class="level">Lv.{{level}}</text>
+      </view>
+    </view>
+    <view class="currency-info">
+      <text class="currency">💰 {{gold}}</text>
+      <text class="currency">💎 {{diamond}}</text>
+    </view>
+  </view>
+
+  <!-- 游戏标题 -->
+  <view class="title-section">
+    <text class="title">🥚 轮椅大作战 🥚</text>
+    <text class="subtitle">年轻人的轮椅Battle</text>
+  </view>
+
+  <!-- 模式选择 -->
+  <view class="mode-section">
+    <button class="btn btn-primary" bindtap="onSoloMode">
+      🎮 单人闯关
+    </button>
+    <button class="btn btn-secondary" bindtap="onPvPMode">
+      ⚔️ 多人匹配
+    </button>
+    <button class="btn btn-gold" bindtap="onFriendMode">
+      👥 好友对战
+    </button>
+  </view>
+
+  <!-- 最近战绩 -->
+  <view class="recent-section">
+    <view class="section-title">最近战绩</view>
+    <view class="record-list">
+      <block wx:for="{{recentRecords}}" wx:key="index">
+        <view class="record-item {{item.result}}">
+          <text class="result-tag {{item.result}}">{{item.result === 'win' ? '胜' : '负'}}</text>
+          <text class="record-info">伤害: {{item.damage}} 击杀: {{item.kill}}</text>
+        </view>
+      </block>
+      <view wx:if="{{recentRecords.length === 0}}" class="empty">
+        <text>暂无战绩记录</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部工具栏 -->
+  <view class="bottom-bar">
+    <button class="tool-btn" bindtap="onCharacterSelect">
+      <text class="icon">👤</text>
+      <text>角色</text>
+    </button>
+    <button class="tool-btn" bindtap="onRankList">
+      <text class="icon">🏆</text>
+      <text>排行</text>
+    </button>
+    <button class="tool-btn" bindtap="onShop">
+      <text class="icon">🛒</text>
+      <text>商城</text>
+    </button>
+    <button class="tool-btn" bindtap="onSettings">
+      <text class="icon">⚙️</text>
+      <text>设置</text>
+    </button>
+  </view>
+</view>

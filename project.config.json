@@ -1,0 +1,50 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "wheelchair_wars",
+  "appid": "wx_your_appid_here",
+  "compileType": "miniprogram",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "bigPackageSizeSupport": true
+  },
+  "libVersion": "3.3.5",
+  "condition": {
+    "search": [],
+    "conversation": [],
+    "game": {
+      "list": [
+        {
+          "name": "轮椅大作战",
+          "pathName": "pages/game/game",
+          "query": "",
+          "scene": "1001"
+        }
+      ]
+    },
+    "plugin": [],
+    "miniprogram": []
+  },
+  "srcMiniprogramRoot": "miniprogram/",
+  "autoAudits": false,
+  "showShadowRootInWechatDebug": false,
+  "useMultiFrameRuntime": true,
+  "useApiHost": false,
+  "useIsolateContext": true,
+  "userConfirmedBundleSwitch": false,
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "packOptions": {},
+  "h5SetAppType": false,
+  "serverCache": false,
+  "NPCServiceType": "default",
+  "publishCache": {
+    "enable": false,
+    "cacheList": []
+  }
+}
